@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark text-white font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #111;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #e63946;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: rgba(230, 57, 70, 0.3);
+    color: white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-full transition-all duration-200 active:scale-95 select-none;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-200 active:scale-95 select-none;
+  }
+
+  .btn-ghost {
+    @apply text-white/70 hover:text-white font-medium py-2 px-4 rounded-lg transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full bg-dark-3 border border-white/10 text-white placeholder-white/30 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-dark-3 border border-white/5 rounded-2xl;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+
+  .swipe-like {
+    @apply absolute top-6 left-6 border-4 border-green-400 text-green-400 text-2xl font-black rounded-xl px-3 py-1 rotate-[-15deg] uppercase tracking-wider;
+  }
+
+  .swipe-nope {
+    @apply absolute top-6 right-6 border-4 border-primary text-primary text-2xl font-black rounded-xl px-3 py-1 rotate-[15deg] uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Gradient orb backgrounds */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.orb-red {
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.25) 0%, transparent 70%);
+}
+
+.orb-dark-red {
+  background: radial-gradient(circle, rgba(193, 18, 31, 0.15) 0%, transparent 70%);
+}

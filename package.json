@@ -1,0 +1,10 @@
+{
+  "name": "flingg",
+  "version": "1.0.0",
+  "description": "Flingg – Dating app for Goa (frontend-only demo)",
+  "scripts": {
+    "dev": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "preview": "cd client && npm run preview"
+  }
+}
